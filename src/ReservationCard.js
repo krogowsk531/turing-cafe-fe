@@ -2,7 +2,7 @@ import React from 'react'
 
 const ReservationCard = ( {id, customerName, resDate, time, number} ) => {
   return (
-    <section>
+    <section >
       <h2>Name: {customerName}</h2>
       <h2>Date: {resDate}</h2>
       <h2>Time: {time}</h2>

@@ -14,59 +14,56 @@ class Form extends Component {
     }
 
     eventHandler = (event) => {
-      event.preventDefault()
       this.setState({[event.target.name]: event.target.value})
     }
 
     submitReservation = (event) => {
       event.preventDefault()
-      const reservationName = this.state.name
-      const reservationDate = this.state.date
-      const reservationTime = this.state.time
-      const numberOfGuests = this.state.number
+      const name = this.state.name
+      const date = this.state.date
+      const time = this.state.time
+      const number = this.state.number
       const id = this.state.id
-      const aNewReservation = { reservationName, reservationDate, reservationTime, numberOfGuests, id}
+      const aNewReservation = { name, date, time, number}
       this.props.addReservation(aNewReservation)
     }
 
     render() {
       return (
         <section>
+        <form>
+        <div>
           <label>Name: </label>
-          <input className="reservation-name"
+          <input
             type="text"
-            id="reservationName"
-            name="reservationName"
+            name="name"
             onChange={this.eventHandler}
             value={this.state.name}
           />
           <label>Date: </label>
-          <input className="reservation-date"
+          <input
             type="text"
-            id="reservationDate"
-            name="reservationDate"
+            name="date"
             onChange={this.eventHandler}
             value={this.state.date}
           />
           <label>Time: </label>
-          <input className="reservation-time"
+          <input
             type="text"
-            id="reservationTime"
-            name="reservationTime"
+            name="time"
             onChange={this.eventHandler}
             value={this.state.time}
           />
           <label>Number of Guests: </label>
-          <input className="number-of-guests"
+          <input
             type="number"
-            id="numberOfGuests"
-            name="numberOfGuests"
+            name="number"
             onChange={this.eventHandler}
             value={this.state.number}
           />
-          <button className="button" type="submit"
-            onClick={this.submitReservation}
-            >Make Reservation</button>
+          </div>
+          <button type="submit" onClick={this.submitReservation}>Make Reservation</button>
+          </form>
         </section>
       )
   }
