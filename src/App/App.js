@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 import { fetchReservations } from '../apiFetch.js'
 import ReservationCard from '../ReservationCard.js'
+import Reservation from '../Reservation/Reservation.js'
 
 
 class App extends Component {
@@ -20,7 +21,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1> reservations </h1>
-        <ReservationCard />
+        <Reservation reservations={this.state.reservations} />
       </div>
     )
   }
