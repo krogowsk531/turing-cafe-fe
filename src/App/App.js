@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import { fetchReservations } from '../apiFetch.js'
+import ReservationCard from '../ReservationCard.js'
+
 
 class App extends Component {
   constructor() {
@@ -18,6 +20,7 @@ class App extends Component {
     return (
       <div className="App">
         <h1> reservations </h1>
+        <ReservationCard />
       </div>
     )
   }
